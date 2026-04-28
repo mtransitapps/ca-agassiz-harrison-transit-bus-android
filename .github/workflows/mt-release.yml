@@ -1,7 +1,7 @@
 # ORIGINAL FILE: https://github.com/mtransitapps/commons/tree/master/shared-overwrite
 name: MT release
 on:
-  pull_request: # DEBUG
+  pull_request: # make available for initial PR but job is Skipped by default
   workflow_dispatch: # manual
     inputs:
       allowNonDefault:
@@ -98,7 +98,7 @@ env:
   MT_STORE_PRODUCTION_OFF: ${{ secrets.MT_STORE_PRODUCTION_OFF }}
 jobs:
   MT-RELEASE-JOB:
-    if: ${{ github.ref_name == github.event.repository.default_branch || github.event.inputs.allowNonDefault == 'true' }} # only run on default branch, or if allowed, or on PRs
+    if: ${{ github.ref_name == github.event.repository.default_branch || github.event.inputs.allowNonDefault == 'true' }}
     name: "MT Release"
     timeout-minutes: 20
     runs-on: ubuntu-latest
