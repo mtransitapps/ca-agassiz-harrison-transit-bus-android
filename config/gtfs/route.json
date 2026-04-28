@@ -1,10 +1,28 @@
 {
-  "default_route_id_enabled": "true",
-  "use_route_short_name_for_route_id": "false",
+  "default_route_id_enabled": true,
+  "use_route_short_name_for_route_id": false,
   "route_id_cleanup_regex": "\\-[0-9A-Z]+$",
   "route_colors": [],
   "route_colors_ignored": [
     "000000"
   ],
-  "direction_finder_enabled": "true"
+  "direction_finder_enabled": true,
+  "direction_headsign_cleaners": [
+    {
+      "regex": "express",
+      "ignore_case": true,
+      "is_word": true
+    },
+    {
+      "regex": "special",
+      "ignore_case": true,
+      "is_word": true
+    },
+    {
+      "regex": "only",
+      "ignore_case": true,
+      "is_word": true
+    }
+  ],
+  "trip_headsign_remove_via": true
 }
