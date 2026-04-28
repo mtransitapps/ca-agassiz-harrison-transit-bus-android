@@ -1,6 +1,9 @@
 # ORIGINAL FILE: https://github.com/mtransitapps/commons/tree/master/shared-overwrite
 name: MT record screenshots
 on:
+  pull_request:
+    branches:
+      - '*setup*'
   workflow_dispatch: # manual
     inputs:
       commitDirectly:
